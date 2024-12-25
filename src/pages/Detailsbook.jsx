@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react';
-import { NavLink, useLoaderData, useParams } from 'react-router-dom';
+import { NavLink, useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import { Authcontext } from '../components/Authprovider';
 
 const Detailsbook = () => {
     const {id} = useParams()
+    const navigate = useNavigate()
     const book = useLoaderData()
     const {user} = useContext(Authcontext)
     const {coverimg,name,authorName,category,rating,_id,shortDescription,quantity} = book
@@ -23,7 +24,10 @@ const Detailsbook = () => {
             book_id: id,
             clientemail: user.email,
             clientname: user.displayName,
-            returndate
+            returndate,
+            coverimg,
+            name,
+            category
 
         }
 
@@ -39,7 +43,7 @@ const Detailsbook = () => {
                 if(data.insertedId){
                 
                     swal("Success!", "Your book has been added!", "success");
-                    // navigate('/allbooks')
+                    navigate('/borowedbooks')
                 }
             })
 
