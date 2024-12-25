@@ -9,6 +9,7 @@ import Allbooks from "./pages/Allbooks";
 import Addbooks from "./pages/Addbooks";
 import Borowedbooks from "./pages/borowedbooks";
 import UpdateBook from "./pages/UpdateBook";
+import Categorybook from "./components/Categorybook";
 // import './index.css'
 
 
@@ -46,7 +47,21 @@ import UpdateBook from "./pages/UpdateBook";
           path: '/updatebook/:id',
           element: <UpdateBook></UpdateBook>,
           loader: ({params}) => fetch(`http://localhost:5000/books/${params.id}`)
-        }
+        },
+        {
+          path:'/books/:category',
+          element: <Categorybook></Categorybook>,
+          loader:async({params})=>{
+              const res =await fetch("http://localhost:5000/books")
+              const data = await res.json()
+              // console.log(data)
+              const singledata = data.filter(d=>d.category == params.category)
+              // console.log(singledata);
+              return singledata
+
+          }
+
+      },
 
 
       ]
