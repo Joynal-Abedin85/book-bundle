@@ -1,8 +1,9 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Bookcard = ({book}) => {
 
-    const {coverimg,name,authorName,category,rating} = book
+    const {coverimg,name,authorName,category,rating,_id} = book
     return (
         <div>
             <div className="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden">
@@ -21,9 +22,11 @@ const Bookcard = ({book}) => {
           <strong>Rating:</strong>{" "}
           <span className="text-yellow-500 font-bold">{book.rating}</span>/5
         </p>
+        <NavLink to={`/updatebook/${_id}`}>
         <button className='px-6 mt-4 py-2 text-white font-semibold rounded-md bg-purple-500 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 shadow-md transition duration-200'>
             Update
         </button>
+        </NavLink>
       </div>
     </div>
         </div>

@@ -8,6 +8,7 @@ import Signup from "./components/Signup";
 import Allbooks from "./pages/Allbooks";
 import Addbooks from "./pages/Addbooks";
 import Borowedbooks from "./pages/borowedbooks";
+import UpdateBook from "./pages/UpdateBook";
 // import './index.css'
 
 
@@ -40,6 +41,11 @@ import Borowedbooks from "./pages/borowedbooks";
         {
           path: '/borowedbooks',
           element: <Borowedbooks></Borowedbooks>
+        },
+        {
+          path: '/updatebook/:id',
+          element: <UpdateBook></UpdateBook>,
+          loader: ({params}) => fetch(`http://localhost:5000/books/${params.id}`)
         }
 
 
