@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { Authcontext } from './Authprovider';
 
 
 const Navbar = () => {
-  const [user,setuser] = useState()
+  const {user,logout} = useContext(Authcontext)
   const menu = <>
         <li><NavLink to="/">home</NavLink></li>
-        <li><NavLink to="/addjob">all books</NavLink></li>
-        <li><NavLink to="/myapplyjob">add books</NavLink></li>
-        <li><NavLink to="/myaddjob">borowed books</NavLink></li>
+        <li><NavLink to="/allbooks">all books</NavLink></li>
+        <li><NavLink to="/addbooks">add books</NavLink></li>
+        <li><NavLink to="/borowedbooks">borowed books</NavLink></li>
     </>
     
     return (
-      <div className="navbar bg-base-100 text-purple-500">
+      <div className="navbar bg-black text-purple-500">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -64,17 +65,17 @@ const Navbar = () => {
         </div>
         <ul
           tabIndex={0}
-          className="menu menu-sm dropdown-content bg-teal-500 rounded-box z-[1] mt-28 w-52 p-2 shadow"
+          className="menu menu-sm dropdown-content bg-teal-100 rounded-box z-[10] mt-28 w-52 p-2 shadow"
         >
           
           <li>
             <a>{user?.displayName}</a>
           </li>
           <li>
-            <button >Logout</button>
+            <button onClick={logout}>Logout</button>
           </li>
         </ul>
-      </div>) :(<div className="navbar-end">
+      </div>) :(<div className="">
         <NavLink to='/signin' className="btn font-bold text-teal-500 ">Sign In</NavLink>
       </div>) 
       }

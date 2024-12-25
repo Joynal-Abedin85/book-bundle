@@ -25,54 +25,48 @@ const StyledSlider = styled(AwesomeSlider)`
 const Banner = () => {
   return (
     <StyledSlider>
-      <div className="bg-gradient-to-t from-teal-700 to-black flex items-center justify-center h-full gap-3 px-4">
+      <div className="bg-gradient-to-t from-purple-700 to-black flex items-center justify-center h-full gap-3 px-4">
         <div className="w-1/2">
           <h2 className="text-white text-xl border-b-2 border-[#00F9AA]">
             Lets talk about
           </h2>
           <h2 className="text-5xl text-[#00F9AA] font-bold my-4">
-            Visa for tourist what you need to know
+            we have a uniqe book what you need to know
           </h2>
           <h2 className="text-gray-300">
-            Discover everything for a tourist need to know about a visa for
-            tour. Learn the important rule for go to abroad and enjoy your
-            tour,and benifits in your journey. Best of luck.
+          Our Library System helps manage books, borrowing, and returns easily. It tracks inventory, sends reminders for late returns, manages members, and provides reports to make library work simple and efficient.
           </h2>
         </div>
         <div className="w-1/2">
           <img src="/assets/book3.png" alt="" className="w-full " />
         </div>
       </div>
-      <div className="bg-gradient-to-t from-teal-700 to-black flex items-center justify-center h-full gap-3 px-4">
+      <div className="bg-gradient-to-t from-violet-700 to-black flex items-center justify-center h-full gap-3 px-4">
         <div className="w-1/2">
           <h2 className="text-white text-xl border-b-2 border-[#00F9AA]">
             Lets talk about
           </h2>
           <h2 className="text-5xl text-[#00F9AA] font-bold my-4">
-            Visa for tourist what you need to know
+          We have a uniqe book what you need to know
           </h2>
           <h2 className="text-gray-300">
-            Discover everything for a tourist need to know about a visa for
-            tour. Learn the important rule for go to abroad and enjoy your
-            tour,and benifits in your journey. Best of luck.
+          Our Library System helps manage books, borrowing, and returns easily. It tracks inventory, sends reminders for late returns, manages members, and provides reports to make library work simple and efficient.
           </h2>
         </div>
         <div className="w-1/2">
           <img src="/assets/book2.png" alt="" className="w-full " />
         </div>
       </div>
-      <div className="bg-gradient-to-t from-teal-700 to-black flex items-center justify-center h-full gap-3 px-4">
+      <div className="bg-gradient-to-t from-fuchsia-700 to-black flex items-center justify-center h-full gap-3 px-4">
         <div className="w-1/2">
           <h2 className="text-white text-xl border-b-2 border-[#00F9AA]">
             Lets talk about
           </h2>
           <h2 className="text-5xl text-[#00F9AA] font-bold my-4">
-            Visa for tourist what you need to know
+            we have a uniqe book what you need to know
           </h2>
           <h2 className="text-gray-300">
-            Discover everything for a tourist need to know about a visa for
-            tour. Learn the important rule for go to abroad and enjoy your
-            tour,and benifits in your journey. Best of luck.
+          Our Library System helps manage books, borrowing, and returns easily. It tracks inventory, sends reminders for late returns, manages members, and provides reports to make library work simple and efficient.
           </h2>
         </div>
         <div className="w-1/2">
