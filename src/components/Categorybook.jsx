@@ -25,9 +25,9 @@ const Categorybook = () => {
           <strong>Rating:</strong>{" "}
           <span className="text-yellow-500 font-bold">{data.rating}</span>/5
         </p>
-        <NavLink to={`/updatebook/${_id}`}>
+        <NavLink to={`/detailbook/${data._id}`}>
         <button className='px-6 mt-4 py-2 text-white font-semibold rounded-md bg-purple-500 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 shadow-md transition duration-200'>
-            Update
+            details
         </button>
         </NavLink>
       </div>

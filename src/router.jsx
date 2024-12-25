@@ -10,6 +10,7 @@ import Addbooks from "./pages/Addbooks";
 import Borowedbooks from "./pages/borowedbooks";
 import UpdateBook from "./pages/UpdateBook";
 import Categorybook from "./components/Categorybook";
+import Detailsbook from "./pages/Detailsbook";
 // import './index.css'
 
 
@@ -61,6 +62,11 @@ import Categorybook from "./components/Categorybook";
 
           }
 
+      },
+      {
+        path: '/detailbook/:id',
+        element: <Detailsbook></Detailsbook>,
+        loader: ({params}) => fetch(`http://localhost:5000/books/${params.id}`)
       },
 
 
