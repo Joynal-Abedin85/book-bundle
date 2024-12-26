@@ -12,6 +12,7 @@ import UpdateBook from "./pages/UpdateBook";
 import Categorybook from "./components/Categorybook";
 import Detailsbook from "./pages/Detailsbook";
 import Privateroute from "./components/Privateroute";
+import Error from "./components/Error";
 // import './index.css'
 
 
@@ -85,6 +86,10 @@ import Privateroute from "./components/Privateroute";
 
       ]
     },
+    {
+      path: '*',
+      element: <Error></Error>
+    }
   ]);
 
   export default router;

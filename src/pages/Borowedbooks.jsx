@@ -9,8 +9,14 @@ const Borowedbooks = () => {
     useEffect(()=>{
         fetch(`http://localhost:5000/borrowed?email=${user.email}`)
         .then(res => res.json())
-        .then(data => setbooks(data))
+        .then(data => {
+          setbooks(data)
+        })
     },[user.email])
+
+   
+
+    
 
     const handledelete = _id => {
       console.log(_id)

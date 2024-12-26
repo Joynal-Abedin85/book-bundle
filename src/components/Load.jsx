@@ -2,9 +2,10 @@ import React from 'react';
 
 const Load = () => {
     return (
-        <div className='flex justify-center items-center min-h-screen'>
+            <div className='flex justify-center items-center min-h-screen'>
             <span className='loading loading-bars loading-lg '></span>
-        </div>
+            </div>
+        
     );
 };
 
