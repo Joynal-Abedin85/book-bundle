@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Authcontext } from "./Authprovider";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
@@ -10,6 +10,7 @@ import { Helmet } from "react-helmet";
 
 function Signup() {
   const { createuser, setuser,signingoogle } = useContext(Authcontext);
+  const [error,seterror] = useState({})
 
   const location = useLocation()
   const navigate = useNavigate()
@@ -19,6 +20,12 @@ function Signup() {
     const email = e.target.email.value;
     const name = e.target.name.value;
     const password = e.target.password.value;
+    const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+
+        if(!regex.test(password)){
+            seterror({...error, password: 'must have one upper,lower and minimum 6 latter'});
+            return
+        } 
     const photo = e.target.photo.value;
     console.log(email, password);
     createuser(email, password)
@@ -57,6 +64,7 @@ function Signup() {
       })
       .catch((err) => {
         console.log(err);
+        seterror({...error, login: err.code})
       });
   };
 
@@ -138,6 +146,14 @@ function Signup() {
                 </a>
               </label>
             </div>
+            {
+                        error.password && <label className="text-red-500">{error.password}</label>
+            }
+            <div>
+                    {
+                        error.login && (<h2 className="text-red-500">email already used</h2>)
+                    }
+                </div>
             <div className="">
               <h2 className="font-bold">
                 if you have account
