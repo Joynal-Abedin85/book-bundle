@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 
@@ -36,7 +37,12 @@ const Addbooks = () => {
         
     }
     return (
+      <>
+      <Helmet>
+        <title>Add-book</title>
+      </Helmet>
         <form
+        
       onSubmit={handleaddbook}
       className="max-w-lg mx-auto p-6 bg-white shadow-md rounded-md space-y-4"
     >
@@ -134,6 +140,7 @@ const Addbooks = () => {
         <p><strong>Note:</strong> Book content is stored in our secure database. Ensure the details are correct before submission.</p>
       </div>
     </form>
+    </>
     );
 };
 

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Authcontext } from '../components/Authprovider';
+import { Helmet } from 'react-helmet';
 
 const Borowedbooks = () => {
     const {user} = useContext(Authcontext)
@@ -35,7 +36,12 @@ const Borowedbooks = () => {
       })
     }
     return (
+
+      
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+          <Helmet>
+            <title>Borowbook</title>
+          </Helmet>
             {
                 books.map(book => <div className="w-11/12 my-4 max-w-md mx-auto bg-gradient-to-r from-purple-500 via-purple-600 to-purple-800 text-white rounded-xl shadow-lg shadow-purple-700 p-5">
                     <div className="flex items-center">

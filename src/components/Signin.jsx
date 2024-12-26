@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Authcontext } from './Authprovider';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
+import { Helmet } from 'react-helmet';
 
 const Signin = () => {
 
@@ -56,6 +57,9 @@ const Signin = () => {
 
     return (
         <div className="hero bg-base-200 min-h-screen">
+          <Helmet>
+        <title>sign in</title>
+      </Helmet>
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
       <h1 className="text-5xl font-bold">Login now!</h1>

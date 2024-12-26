@@ -5,6 +5,7 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { updateProfile} from "firebase/auth";
 import { auth } from '../firebase.init';
 import { FaGoogle } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 
 function Signup() {
@@ -72,6 +73,9 @@ function Signup() {
 }
   return (
     <div className="hero bg-base-200 min-h-screen">
+      <Helmet>
+        <title>sign up</title>
+      </Helmet>
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">sign up now!</h1>
