@@ -28,7 +28,7 @@ const Extra = () => {
       </ul>
     </div>
     <div className="max-w-[800px]">
-        <img src="../public/assets/about-2.png" alt="" />
+        <img src="/assets/about-2.png" alt="" />
     </div>
         </div>
     );

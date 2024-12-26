@@ -25,7 +25,7 @@ const StyledSlider = styled(AwesomeSlider)`
 const Banner = () => {
   return (
     <StyledSlider>
-      <div className="bg-gradient-to-t from-purple-700 to-black flex items-center justify-center h-full gap-3 px-4">
+      <div className="bg-gradient-to-t from-purple-700 to-black flex items-center justify-center flex-col sm:flex-row h-full gap-3 px-4">
         <div className="w-1/2">
           <h2 className="text-white text-xl border-b-2 border-[#00F9AA]">
             Lets talk about
@@ -41,7 +41,7 @@ const Banner = () => {
           <img src="/assets/book3.png" alt="" className="w-full " />
         </div>
       </div>
-      <div className="bg-gradient-to-t from-violet-700 to-black flex items-center justify-center h-full gap-3 px-4">
+      <div className="bg-gradient-to-t flex-col sm:flex-row from-violet-700 to-black flex items-center justify-center h-full gap-3 px-4">
         <div className="w-1/2">
           <h2 className="text-white text-xl border-b-2 border-[#00F9AA]">
             Lets talk about
@@ -57,7 +57,7 @@ const Banner = () => {
           <img src="/assets/book2.png" alt="" className="w-full " />
         </div>
       </div>
-      <div className="bg-gradient-to-t from-fuchsia-700 to-black flex items-center justify-center h-full gap-3 px-4">
+      <div className="bg-gradient-to-t flex-col sm:flex-row from-fuchsia-700 to-black flex items-center justify-center h-full gap-3 px-4">
         <div className="w-1/2">
           <h2 className="text-white text-xl border-b-2 border-[#00F9AA]">
             Lets talk about
