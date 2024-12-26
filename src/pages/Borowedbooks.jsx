@@ -8,7 +8,7 @@ const Borowedbooks = () => {
     
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/borrowed?email=${user.email}`)
+        fetch(`https://book-server-seven-iota.vercel.app/borrowed?email=${user.email}`)
         .then(res => res.json())
         .then(data => {
           setbooks(data)
@@ -21,7 +21,7 @@ const Borowedbooks = () => {
 
     const handledelete = _id => {
       console.log(_id)
-      fetch(`http://localhost:5000/borrowed/${_id}`,{
+      fetch(`https://book-server-seven-iota.vercel.app/borrowed/${_id}`,{
         method: 'DELETE'
       })
       .then(res => res.json())

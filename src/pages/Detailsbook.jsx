@@ -31,7 +31,7 @@ const Detailsbook = () => {
 
         }
 
-        fetch('http://localhost:5000/borowbook',{
+        fetch('https://book-server-seven-iota.vercel.app/borowbook',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

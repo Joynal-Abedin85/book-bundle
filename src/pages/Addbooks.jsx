@@ -15,7 +15,7 @@ const Addbooks = () => {
         console.log(newbook)
         
 
-        fetch('http://localhost:5000/books',{
+        fetch('https://book-server-seven-iota.vercel.app/books',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

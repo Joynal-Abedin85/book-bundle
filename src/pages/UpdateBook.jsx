@@ -19,7 +19,7 @@ const UpdateBook = () => {
         console.log(updatebook)
         
 
-        fetch(`http://localhost:5000/books/${_id}`,{
+        fetch(`https://book-server-seven-iota.vercel.app/books/${_id}`,{
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

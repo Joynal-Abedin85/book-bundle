@@ -15,10 +15,10 @@ const Allbooks = () => {
     // useEffect(() => {
     //     const fetchBooks = async () => {
     //         const query = showAvailable ? '?available=true' : ''; // Build query string
-    //         console.log(`Fetching: http://localhost:5000/books${query}`);
+    //         console.log(`Fetching: https://book-server-seven-iota.vercel.app/books${query}`);
             
     //         try {
-    //             const res = await fetch(`http://localhost:5000/books${query}`);
+    //             const res = await fetch(`https://book-server-seven-iota.vercel.app/books${query}`);
     //             if (res.ok) {
     //                 const data = await res.json();
     //                 setBooks(data); // Update books state
@@ -40,8 +40,8 @@ const Allbooks = () => {
     useEffect(() => {
         // Construct URL based on filter state
         const url = showAvailable
-          ? "http://localhost:5000/books?available=true" // Fetch only available books
-          : "http://localhost:5000/books"; // Fetch all books
+          ? "https://book-server-seven-iota.vercel.app/books?available=true" // Fetch only available books
+          : "https://book-server-seven-iota.vercel.app/books"; // Fetch all books
       
         const fetchBooks = async () => {
           try {

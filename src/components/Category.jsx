@@ -8,7 +8,7 @@ const Category = () => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:5000/category')
+        fetch('https://book-server-seven-iota.vercel.app/category')
         .then(res =>res.json())
         .then(data => setcate(data))
     }

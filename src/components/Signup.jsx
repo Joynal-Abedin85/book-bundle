@@ -47,7 +47,7 @@ function Signup() {
           });
 
         const newuser = { email, name };
-        fetch("http://localhost:5000/users", {
+        fetch("https://book-server-seven-iota.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

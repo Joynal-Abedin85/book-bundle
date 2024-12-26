@@ -38,7 +38,7 @@ import Error from "./components/Error";
           element: (
             <Privateroute><Allbooks></Allbooks></Privateroute>
           ) ,
-          loader: () => fetch('http://localhost:5000/books')
+          loader: () => fetch('https://book-server-seven-iota.vercel.app/books')
         },
         {
           path: '/addbooks',
@@ -57,7 +57,7 @@ import Error from "./components/Error";
           element: (
             <Privateroute><UpdateBook></UpdateBook></Privateroute>
           ) ,
-          loader: ({params}) => fetch(`http://localhost:5000/books/${params.id}`)
+          loader: ({params}) => fetch(`https://book-server-seven-iota.vercel.app/books/${params.id}`)
         },
         {
           path:'/books/:category',
@@ -65,7 +65,7 @@ import Error from "./components/Error";
             <Privateroute><Categorybook></Categorybook></Privateroute>
           ), 
           loader:async({params})=>{
-              const res =await fetch("http://localhost:5000/books")
+              const res =await fetch("https://book-server-seven-iota.vercel.app/books")
               const data = await res.json()
               // console.log(data)
               const singledata = data.filter(d=>d.category == params.category)
@@ -80,7 +80,7 @@ import Error from "./components/Error";
         element: (
         <Privateroute><Detailsbook></Detailsbook></Privateroute>
       ),
-        loader: ({params}) => fetch(`http://localhost:5000/books/${params.id}`)
+        loader: ({params}) => fetch(`https://book-server-seven-iota.vercel.app/books/${params.id}`)
       },
 
 
