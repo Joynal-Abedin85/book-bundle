@@ -3,7 +3,7 @@ import { FaStar } from 'react-icons/fa';
 
 const Extra2 = () => {
     return (
-        <div className="w-11/12 mx-auto bg-white shadow-lg rounded-lg p-6">
+        <div className="w-full mx-auto bg-white shadow-lg p-6">
       <h2 className="text-2xl font-bold text-center mb-4">User Ratings</h2>
       <div className="space-y-6">
         {/* Rating 1 */}

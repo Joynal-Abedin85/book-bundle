@@ -12,30 +12,7 @@ const Allbooks = () => {
 
     const [showAvailable, setShowAvailable] = useState(false);
 
-    // useEffect(() => {
-    //     const fetchBooks = async () => {
-    //         const query = showAvailable ? '?available=true' : ''; // Build query string
-    //         console.log(`Fetching: https://book-server-seven-iota.vercel.app/books${query}`);
-            
-    //         try {
-    //             const res = await fetch(`https://book-server-seven-iota.vercel.app/books${query}`);
-    //             if (res.ok) {
-    //                 const data = await res.json();
-    //                 setBooks(data); // Update books state
-    //             } else {
-    //                 console.error('Failed to fetch books');
-    //             }
-    //         } catch (error) {
-    //             console.error('Error fetching books:', error);
-    //         }
-    //         console.log(books)
-    //     };
-
-        
-
-
-    //     fetchBooks();
-    // }, [showAvailable]); // Re-run effect when `showAvailable` changes
+  
 
     useEffect(() => {
         // Construct URL based on filter state
@@ -59,7 +36,7 @@ const Allbooks = () => {
         <>
         <button
                     onClick={() => setShowAvailable(!showAvailable)} // Toggle filter
-                    className={`px-4 py-2 text-white font-medium rounded-lg shadow-md transition-all ${
+                    className={`px-5 ml-5 py-2 top-5 relative text-white font-medium rounded-lg shadow-md transition-all ${
                         showAvailable
                             ? 'bg-purple-700 hover:bg-purple-800'
                             : 'bg-gray-400 hover:bg-gray-500'
@@ -67,7 +44,7 @@ const Allbooks = () => {
                 >
                     {showAvailable ? 'Show All Books' : 'Show Available Books'}
                 </button>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
+        <div className="grid relative mb-20 top-2 w-11/12 mx-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
             
             <Helmet>
             <title>All book</title>

@@ -24,8 +24,8 @@ const StyledSlider = styled(AwesomeSlider)`
 
 const Banner = () => {
   return (
-    <StyledSlider>
-      <div className="bg-gradient-to-t from-purple-700 to-black flex items-center justify-center flex-col sm:flex-row h-full gap-3 px-4">
+    <StyledSlider className="h-[800px] sm:h-[450px]">
+      <div className="bg-gradient-to-t from-purple-700 to-black flex items-center justify-center flex-col sm:flex-row  h-full py-6 gap-3 px-3">
         <div className="w-1/2">
           <h2 className="text-white text-xl border-b-2 border-[#00F9AA]">
             Lets talk about
@@ -37,8 +37,8 @@ const Banner = () => {
           Our Library System helps manage books, borrowing, and returns easily. It tracks inventory, sends reminders for late returns, manages members, and provides reports to make library work simple and efficient.
           </h2>
         </div>
-        <div className="w-1/2">
-          <img src="/assets/book3.png" alt="" className="w-full " />
+        <div className="w-1/2 h-[400px] flex items-center justify-center">
+          <img src="/assets/book3.png" alt="" className="w-auto h-[330px]" />
         </div>
       </div>
       <div className="bg-gradient-to-t flex-col sm:flex-row from-violet-700 to-black flex items-center justify-center h-full gap-3 px-4">
@@ -53,8 +53,8 @@ const Banner = () => {
           Our Library System helps manage books, borrowing, and returns easily. It tracks inventory, sends reminders for late returns, manages members, and provides reports to make library work simple and efficient.
           </h2>
         </div>
-        <div className="w-1/2">
-          <img src="/assets/book2.png" alt="" className="w-full " />
+        <div className="w-1/2 h-[400px] flex items-center justify-center">
+          <img src="/assets/book2.png" alt="" className="w-auto h-[330px]" />
         </div>
       </div>
       <div className="bg-gradient-to-t flex-col sm:flex-row from-fuchsia-700 to-black flex items-center justify-center h-full gap-3 px-4">
@@ -69,8 +69,8 @@ const Banner = () => {
           Our Library System helps manage books, borrowing, and returns easily. It tracks inventory, sends reminders for late returns, manages members, and provides reports to make library work simple and efficient.
           </h2>
         </div>
-        <div className="w-1/2">
-          <img src="/assets/book1.png" alt="" className="w-full " />
+        <div className="w-1/2 h-[400px] flex items-center justify-center">
+          <img src="/assets/book1.png" alt="" className="w-auto h-[330px]" />
         </div>
       </div>
     </StyledSlider>

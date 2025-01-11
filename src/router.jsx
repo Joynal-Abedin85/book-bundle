@@ -13,6 +13,7 @@ import Categorybook from "./components/Categorybook";
 import Detailsbook from "./pages/Detailsbook";
 import Privateroute from "./components/Privateroute";
 import Error from "./components/Error";
+import Blog from "./ejpupdate/Blog";
 // import './index.css'
 
 
@@ -45,6 +46,10 @@ import Error from "./components/Error";
           element: (
             <Privateroute><Addbooks></Addbooks></Privateroute>
           ) 
+        },
+        {
+          path: '/blog',
+          element: <Blog></Blog>
         },
         {
           path: '/borowedbooks',

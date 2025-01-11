@@ -9,8 +9,10 @@ const Mainlayout = () => {
     return (
         <div>
             <Navbar></Navbar>
+            <div className='top-[62px] relative'>
             <Outlet></Outlet>
             <Footer></Footer>
+            </div>
             
         </div>
     );
