@@ -144,7 +144,7 @@ const Blog = () => {
                 href="#"
                 className="text-blue-600 hover:text-blue-800 mt-4 inline-block"
               >
-                Read More →
+                Read More →  
               </a>
             </div>
           </div>

@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+ 
+
+
+
+ .menu li > *:not(ul, .menu-title, details, .btn) {
+    position: relative;
+    padding-bottom: 5px; /* Add some space for the underline */
+}
+
+.menu li > *:not(ul, .menu-title, details, .btn):active, .menu li > *:not(ul, .menu-title, details, .btn).active, .menu li > details > summary:active {
+    --tw-bg-opacity: 1;
+    background-color: oklch(0.53 0.22 255.61 / 0);
+    --tw-text-opacity: 1;
+    color: var(--fallback-nc, oklch(var(--nc) / var(--tw-text-opacity)));
+}
+
+.menu li > *:not(ul, .menu-title, details, .btn)::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: rgb(141, 7, 7);
+    transition: all 0.4s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.menu li > *:not(ul, .menu-title, details, .btn):active::after,
+.menu li > *:not(ul, .menu-title, details, .btn).active::after {
+    width: 100%;
+}
+
+
+ 

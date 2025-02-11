@@ -8,8 +8,11 @@ const Navbar = () => {
   const menu = <>
         <li><NavLink to="/">home</NavLink></li>
         <li><NavLink to="/allbooks">all books</NavLink></li>
-        <li><NavLink to="/addbooks">add books</NavLink></li>
-        <li><NavLink to="/borowedbooks">borowed books</NavLink></li>
+        {
+          user?.email && <> <li><NavLink to="/addbooks">add books</NavLink></li>
+          <li><NavLink to="/borowedbooks">borowed books</NavLink></li>
+          </>
+        }
         <li><NavLink to="/blog">blog</NavLink></li>
     </>
     
