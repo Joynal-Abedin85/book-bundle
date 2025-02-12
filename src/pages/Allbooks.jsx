@@ -4,53 +4,77 @@ import Bookcard from '../components/Bookcard';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
 
-
 const Allbooks = () => {
-
-    const bookss = useLoaderData()
+    const bookss = useLoaderData();
     const [books, setBooks] = useState([]);
-
     const [showAvailable, setShowAvailable] = useState(false);
-
-  
+    const [sortOrder, setSortOrder] = useState("default"); // "asc" | "desc" | "default"
 
     useEffect(() => {
-        // Construct URL based on filter state
         const url = showAvailable
-          ? "https://book-server-seven-iota.vercel.app/books?available=true" // Fetch only available books
-          : "https://book-server-seven-iota.vercel.app/books"; // Fetch all books
-      
+            ? "https://book-server-seven-iota.vercel.app/books?available=true"
+            : "https://book-server-seven-iota.vercel.app/books";
+
         const fetchBooks = async () => {
-          try {
-            const response = await axios.get(url);
-            setBooks(response.data);
-            console.log(response.data)
-          } catch (error) {
-            console.error("Error fetching books:", error);
-          }
+            try {
+                const response = await axios.get(url);
+                setBooks(response.data);
+            } catch (error) {
+                console.error("Error fetching books:", error);
+            }
         };
-      
+
         fetchBooks();
-      }, [showAvailable]);
+    }, [showAvailable]);
+
+    // Sorting function
+    const sortedBooks = [...books].sort((a, b) => {
+        if (sortOrder === "asc") return a.rating - b.rating;
+        if (sortOrder === "desc") return b.rating - a.rating;
+        return 0; // Default order (no sorting)
+    });
+
     return (
         <>
-        <button
-                    onClick={() => setShowAvailable(!showAvailable)} // Toggle filter
-                    className={`px-5 ml-5 py-2 top-5 relative text-white font-medium rounded-lg shadow-md transition-all ${
-                        showAvailable
-                            ? 'bg-purple-700 hover:bg-purple-800'
-                            : 'bg-gray-400 hover:bg-gray-500'
+            
+
+            {/* Sorting Buttons */}
+            <div className="flex gap-4 mr-5 top-5 relative lg:ml-20 ml-10 mb-4">
+                <button
+                    onClick={() => setSortOrder("asc")}
+                    className={`px-5 py-2 text-white font-medium rounded-lg shadow-md transition-all ${
+                        sortOrder === "asc" ? 'bg-blue-700 hover:bg-blue-800' : 'bg-gray-400 hover:bg-gray-500'
                     }`}
                 >
-                    {showAvailable ? 'Show All Books' : 'Show Available Books'}
+                    Sort by Rating (Low to High)
                 </button>
-        <div className="grid relative mb-20 top-2 w-11/12 mx-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
-            
-            <Helmet>
-            <title>All book</title>
-          </Helmet>
-            {books.map(book => <Bookcard book={book}></Bookcard>)}
-        </div>
+                <button
+                    onClick={() => setSortOrder("desc")}
+                    className={`px-5 py-2 text-white font-medium rounded-lg shadow-md transition-all ${
+                        sortOrder === "desc" ? 'bg-blue-700 hover:bg-blue-800' : 'bg-gray-400 hover:bg-gray-500'
+                    }`}
+                >
+                    Sort by Rating (High to Low)
+                </button>
+                <button
+                    onClick={() => setSortOrder("default")}
+                    className={`px-5 py-2 text-white font-medium rounded-lg shadow-md transition-all ${
+                        sortOrder === "default" ? 'bg-red-700 hover:bg-red-800' : 'bg-gray-400 hover:bg-gray-500'
+                    }`}
+                >
+                    Default Order
+                </button>
+            </div>
+
+            {/* Book Grid */}
+            <div className="grid relative mb-20 top-2 w-11/12 mx-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
+                <Helmet>
+                    <title>All Books</title>
+                </Helmet>
+                {sortedBooks.map(book => (
+                    <Bookcard key={book.id} book={book} />
+                ))}
+            </div>
         </>
     );
 };
