@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Promotional = () => {
+  const [isOpen, setIsOpen] = useState(false);
     return (
         <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,21 +78,59 @@ const Promotional = () => {
               Join thousands of book lovers using our Book Management system to enhance their collections and reading journeys.
             </p>
             <div className="mt-6 flex justify-center">
-              <a
-                href="#"
+              <Link
+                to='/allbooks'
                 className="bg-white text-blue-600 hover:text-blue-700 font-semibold py-3 px-6 rounded-md shadow-md hover:shadow-lg transition-shadow duration-300"
               >
                 Get Started Today
-              </a>
+              </Link>
               <a
-                href="#"
-                className="ml-4 bg-transparent border border-white text-white font-semibold py-3 px-6 rounded-md hover:bg-white hover:text-blue-600 transition-colors duration-300"
-              >
-                Learn More
-              </a>
+        href="#"
+        onClick={(e) => {
+          e.preventDefault(); // Prevent default link behavior
+          setIsOpen(true);
+        }}
+        className="ml-4 bg-transparent border border-white text-white font-semibold py-3 px-6 rounded-md hover:bg-white hover:text-blue-600 transition-colors duration-300"
+      >
+        Learn More
+      </a>
             </div>
           </div>
         </div>
+        {isOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white w-11/12 md:w-1/3 p-6 rounded-lg shadow-lg relative">
+            {/* Close Button */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl"
+            >
+              &times;
+            </button>
+
+            {/* Modal Content */}
+            <h2 className="text-xl font-semibold text-blue-600 mb-3">
+              Book Management & Reading Experience
+            </h2>
+            <p className="text-gray-700">
+              Managing books efficiently enhances the reading experience. A well-organized collection helps in tracking progress, saving favorite passages, and setting reading goals.
+            </p>
+            <p className="mt-2 text-gray-700">
+              Features like digital bookmarks, categorization, and note-taking improve accessibility and engagement for book lovers.
+            </p>
+
+            {/* Close Button */}
+            <div className="mt-4 text-right">
+              <button
+                onClick={() => setIsOpen(false)}
+                className="bg-blue-600 text-white px-5 py-2 rounded-md hover:bg-blue-700 transition"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       </section>
     );
 };

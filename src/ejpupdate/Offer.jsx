@@ -3,7 +3,7 @@ import React from 'react';
 const Offer = () => {
     return (
         <div>
-            <section className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 py-16">
+            <section className="bg-gradient-to-r from-purple-400 via-purple-700 to-purple-400 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
         {/* Offer Heading */}
@@ -53,7 +53,7 @@ const Offer = () => {
         {/* Call to Action */}
         <a
           href="#"
-          className="bg-white text-red-500 font-bold py-3 px-8 rounded-md shadow-md hover:shadow-lg transition-shadow duration-300"
+          className="bg-white text-black-700 font-bold py-3 px-8 rounded-md shadow-md hover:shadow-lg transition-shadow duration-300"
         >
           Upgrade to Premium Now
         </a>
