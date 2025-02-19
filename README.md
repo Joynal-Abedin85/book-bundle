@@ -1,4 +1,4 @@
-<h1>📌 Book Bundle</h1>
+<h1>📌 Book Bundles</h1>
 <p>Book Bundle is a modern e-commerce platform designed for book lovers. Users can explore, add, and update books, as well as mark their favorite ones. The platform offers a seamless and interactive user experience with a clean and responsive UI, making it easy to discover and manage books.</p>
 
 <h2>🖼️ Project Screenshot</h2> 
