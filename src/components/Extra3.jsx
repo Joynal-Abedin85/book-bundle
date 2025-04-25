@@ -1,4 +1,5 @@
 import React from 'react';
+import { Star } from 'lucide-react'; // optional icon library like lucide-react
 
 const Extra3 = () => {
   const book = {
@@ -6,7 +7,11 @@ const Extra3 = () => {
     author: "James Clear",
     description:
       "A proven framework for improving every day. Learn how small habits lead to big changes.",
-    image: "https://m.media-amazon.com/images/I/91bYsX41DVL.jpg"
+    image: "https://m.media-amazon.com/images/I/91bYsX41DVL.jpg",
+    rating: 4.8,
+    category: "Self-Development",
+    year: 2018,
+    quote: "You do not rise to the level of your goals. You fall to the level of your systems."
   };
 
   return (
@@ -14,6 +19,7 @@ const Extra3 = () => {
       <h2 className="text-3xl md:text-4xl font-bold text-indigo-800 mb-6 text-center">
         📖 Featured Book of the Week
       </h2>
+
       <div className="flex flex-col md:flex-row items-center gap-8">
         <img
           src={book.image}
@@ -21,9 +27,28 @@ const Extra3 = () => {
           className="w-40 h-56 object-cover rounded-xl shadow-md hover:shadow-xl transition"
         />
         <div className="text-center md:text-left">
+          <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
+            <span className="px-3 py-1 bg-yellow-400 text-white rounded-full text-sm font-semibold">
+              {book.category}
+            </span>
+            <span className="px-3 py-1 bg-indigo-600 text-white rounded-full text-sm font-semibold">
+              {book.year}
+            </span>
+          </div>
+
           <h3 className="text-2xl font-semibold text-purple-700">{book.title}</h3>
           <p className="text-lg text-gray-700 mt-2 italic">by {book.author}</p>
+          <div className="flex items-center justify-center md:justify-start mt-2 text-yellow-500">
+            <Star className="w-5 h-5 fill-yellow-500" /> 
+            <span className="ml-1 font-medium">{book.rating} / 5</span>
+          </div>
+
           <p className="text-gray-600 mt-4">{book.description}</p>
+
+          <blockquote className="mt-4 italic text-sm text-gray-500 border-l-4 border-purple-400 pl-4">
+            “{book.quote}”
+          </blockquote>
+
           <button className="mt-6 px-6 py-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition">
             Read More
           </button>
