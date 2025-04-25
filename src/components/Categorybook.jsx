@@ -7,7 +7,8 @@ const Categorybook = () => {
 
     const {coverimg,name,authorName,category,rating,_id} = onedata
     return (
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-3 '>
+        <div className="w-10/12 mx-auto ">
+          <div className='grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 gap-6 p-3 relative top-5   mb-10'>
             {onedata.map(data => <div>
             <div className="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden">
       <img
@@ -33,6 +34,7 @@ const Categorybook = () => {
       </div>
     </div>
         </div>)}
+        </div>
         </div>
     );
 };
