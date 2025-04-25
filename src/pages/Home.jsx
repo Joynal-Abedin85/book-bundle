@@ -8,6 +8,7 @@ import Promotional from '../ejpupdate/Promotional';
 import Offer from '../ejpupdate/Offer';
 import Newslatter from '../ejpupdate/Newslatter';
 import Blog from '../ejpupdate/Blog';
+import Extra3 from '../components/Extra3';
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
             <Category></Category>
             <Extra></Extra>
             <Extra2></Extra2>
+            <Extra3></Extra3>
             <Recentproduct></Recentproduct>
             <Promotional></Promotional>
             <Offer></Offer>

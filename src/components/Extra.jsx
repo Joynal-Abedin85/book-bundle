@@ -10,7 +10,7 @@ const Extra = () => {
         </span>
       </div>
       <h2 className="mt-6 text-lg font-bold text-gray-800">
-        Library Management Software
+        Library Management Software 
       </h2>
       <ul className="mt-4 space-y-2 text-gray-600">
         <li className="flex items-start">
